@@ -1,0 +1,52 @@
+<div class="searchPageWidth pageHeight" layout-padding layout = "row">
+  <md-content layout-fill class="transparentBackground">
+    <md-tabs layout-fill class="loginTab" md-stretch-tabs="always">
+      <md-tab id="tab1">
+        <md-tab-label>Users</md-tab-label>
+        <md-tab-body>
+          <md-list flex="">
+            <md-list-item ng-hide="$search.$searchService.users && $search.$searchService.users.length > 0">No results found</md-list-item>
+            <md-list-item ng-repeat="user in $search.$searchService.users" class="listItem userSearch">
+              <div class="md-whiteframe-3dp userListItem whiteBackground" layout-fill>
+                <md-button ng-click="goToProfile(user.username)" class="tweetAuthorButton" layout-fill><text>{{ user.username }}</text></md-button>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab2">
+        <md-tab-label>Hashtags</md-tab-label>
+        <md-tab-body>
+          <md-list flex="">
+            <md-list-item ng-hide="$search.$searchService.hashtags && $search.$searchService.hashtags.length > 0">No results found</md-list-item>
+            <md-list-item ng-repeat="hashtag in $search.$searchService.hashtags" class="listItem md-3-line">
+              <div class="md-whiteframe-3dp userListItem whiteBackground" layout-fill layout="column">
+                <text style="font-weight:bold; font-size:32px">#{{ hashtag.label }}</text>
+                <text>First Used: {{ hashtag.firstUsed | date:'medium' }}</text>
+                <text>Last Used: {{ hashtag.lastUsed | date:'medium' }}</text>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab3">
+        <md-tab-label>Tweets with Hashtag</md-tab-label>
+        <md-tab-body>
+          <md-list flex="">
+            <md-list-item ng-hide="$search.getTweets() && $search.getTweets().length > 0">No results found</md-list-item>
+            <tweet tweet="tweet" ng-repeat="tweet in $search.getTweets()"></tweet>
+          </md-list>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab4">
+        <md-tab-label>Mentions</md-tab-label>
+        <md-tab-body>
+          <md-list flex="">
+            <md-list-item ng-hide="$search.getMentioned() && $search.getMentioned().length > 0">No results found</md-list-item>
+            <tweet tweet="tweet" ng-repeat="tweet in $search.getMentioned()"></tweet>
+          </md-list>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

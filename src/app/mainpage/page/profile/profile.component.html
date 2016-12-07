@@ -1,0 +1,16 @@
+
+<h3 class="md-display-1">
+  {{$profile.$profileService.username}}
+    <md-button class="followButtonProfile" ng-click="$profile.followuser($profile.$profileService.username)" ng-hide="$profile.checkfollower() || $profile.$profileService.username===$profile.$authenticateService.username">
+      <i class="material-icons profileButtonIcon">person_add</i>
+      Follow
+    </md-button>
+    <md-button class="followButtonProfile" ng-click="$profile.unfollowuser($profile.$profileService.username)" ng-hide="!$profile.checkfollower() || $profile.$profileService.username===$profile.$authenticateService.username">
+      <i class="material-icons profileButtonIcon">person</i>
+      Unfollow
+    </md-button>
+</h3>
+<md-list flex="">
+  <md-list-item ng-hide="$profile.getTweets()  && $profile.getTweets().length > 0">No results found</md-list-item>
+  <tweet tweet="tweet" ng-repeat="tweet in $profile.getTweets()"></tweet>
+</md-list>

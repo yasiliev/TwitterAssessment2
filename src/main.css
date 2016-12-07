@@ -1,0 +1,334 @@
+* {
+  font-family: Noto Sans;
+}
+
+.pageWidth {
+  width: 90vw;
+}
+
+.pageHeight {
+  height: 70vh;
+}
+
+.tweetListItem {
+  padding: 5px;
+}
+
+.tweetListItem:hover {
+  cursor: default;
+}
+
+.userListItem {
+  padding: 5px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.followListItem {
+  width: 100%;
+}
+
+.listItem {
+  padding: 5px;
+}
+
+.tweetHead {
+  display: flex;
+}
+
+.tweetIcons {
+  font-size: 36px;
+}
+
+.headingText {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.tweetAuthorButton {
+
+  margin: 0px;
+  padding-left: 0px;
+  float: left;
+}
+
+.userSearch {
+  padding: 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.tweetAuthorButton>text {
+  margin-left: 0px;
+  padding-left: 0px;
+  float: left;
+
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+}
+
+.tweet {
+  min-width: 1%;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.tweet>text {
+  color: #0084B4;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer {
+  padding-top: 2px;
+  margin-left: 0px;
+  border: 2px solid #aab8c2;
+  border-radius: 10px;
+}
+
+.footerContainer {
+  float: left;
+}
+
+.tweetFooterButton {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.tweetFooterButton>text {
+  padding-left: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black
+}
+
+.tweetFooterTweetButton {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.tweetFooterTweetButton>text {
+  padding-left: 8px;
+  font-size: 18px;
+  color: black
+}
+
+.timestamp {
+  color: #aab8c2;
+  padding-top: 8px;
+  padding-left: 16px;
+}
+
+.delete {
+  color: #aab8c2;
+}
+
+.delete:hover {
+  color: rgb(204, 24, 30);
+}
+
+.reply {
+  background-color: rgba(255, 255, 255, 0);
+  font-weight: bolder;
+}
+
+.reply {
+  color: #aab8c2;
+}
+
+.reply:hover {
+  color: #1da1f2;
+}
+
+.repost {
+  color: #aab8c2;
+}
+
+.repost:hover {
+  color: #19cf86;
+}
+
+.like {
+  color: #aab8c2;
+}
+
+.like:hover {
+  color: #e81c4f;
+}
+
+.liked {
+  color: #e81c4f;
+}
+
+.tweetHead.md-button {
+  flex: 1
+}
+
+.ocean-background {
+  background-image: url('./app/global/resources/ocean-background.png');
+  background-size: 100% 100%;
+}
+
+.loginTab {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.transparentBackground {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.whiteBackground {
+  background-color: white;
+}
+
+.fullWidth {
+  width: 100vw;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+
+.menubarContainer {
+  display: flex;
+}
+
+.menuBarLeftButtons {
+  min-width: 26%;
+}
+
+.searchButton {
+  min-width: 1%;
+  min-height: 50%;
+}
+
+.searchButton>i {
+  margin-top: 2px;
+}
+
+.searchContainer {
+  width: 20vw;
+  margin-top: 40px;
+}
+
+.searchFollow {
+  margin-bottom: 0px;
+}
+
+md-dialog {
+  width: 60vw;
+}
+
+.md-button {
+  text-transform: none;
+}
+
+.homeButtonIcon {
+  color: rgba(255,255,255,0.9);
+}
+
+.profileDropDownIcon {
+  color: rgb(40, 40, 40);
+  margin-top: 6px;
+  float: left;
+}
+
+.profileButtonIcon {
+  color: rgba(255,255,255,0.87);
+  margin-top: 6px;
+  float: left;
+}
+
+.profileDropdownText {
+  color: rgb(40, 40, 40);
+  padding-left: 8px;
+}
+
+.profileButtonText {
+  margin-left: 8px;
+  margin-right: 8px;
+  float: right;
+  color: white;
+}
+
+.tweetButtonContainer {
+  outline: 0;
+}
+
+.tweetButton {
+  outline: 0;
+}
+
+.tweetButton:hover {
+  cursor: pointer;
+}
+
+.tweetButtonIcon {
+  outline: 0;
+  font-size: 48px;
+}
+
+.search:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: white
+}
+
+.searchInput {
+  width: 20%;
+}
+
+input[type=text].searchInput {
+
+  background-color: rgb(255, 255, 255);
+}
+
+i {
+  align-items: center;
+  justify-content: center;
+}
+
+.tweetContainer {
+  width: 70%
+}
+
+.tweetButton:hover {
+    cursor: hand;
+    border-color: rgb(255, 255, 255);
+}
+
+.searchTabs {
+  width: 70vw;
+  padding: 1vw;
+}
+
+.listUsage md-divider {
+  margin-top: 10px;
+  margin-bottom: 0; }
+
+html {
+  overflow-y: scroll;
+}
+
+.full-height {
+    height: -moz-calc(100% - 64px);
+    height: -webkit-calc(100% - 64px);
+    height: calc(100% - 64px);
+  margin-bottom: 0;
+}
+.searchPageWidth {
+  width: 60vw;
+}
+
+.followButton {
+  background: linear-gradient(-90deg, white, turquoise);
+  min-width: 15vw;
+}
+.followButtonProfile {
+  background: linear-gradient(-90deg, white, turquoise);
+  width: 100px;
+}

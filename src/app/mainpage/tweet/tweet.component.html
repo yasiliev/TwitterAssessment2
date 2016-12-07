@@ -1,0 +1,54 @@
+<md-list-item class="md-3-line tweetListItem" ng-click="$tweet.showContext($event, $tweet.tweet)">
+  <div class="md-list-item-text md-whiteframe-3dp tweetListItem whiteBackground" layout="row" layout-align="space-between center">
+    <div class="tweetContainer" layout="column">
+      <div class="tweetHead">
+        <div class="author" layout="row" layout-align="center">
+          <md-button class="tweetAuthorButton md-primary" ng-click="goToProfile($tweet.tweet.author.username)">
+            <text>{{ $tweet.tweet.author.username }}</text>
+          </md-button>
+          <text class="timestamp">
+            {{ $tweet.tweet.posted | date:'medium' }}
+          </text>
+        </div>
+      </div>
+      <p class="tweet" compile="$tweet.tweet.content" style="font-size:20px; padding-left: 2px; padding-top: 0px; color:black"></p>
+      <md-button ng-show='$tweet.tweet.inReplyTo' class="footer" ng-click="$tweet.showContext($event, $tweet.tweet.inReplyTo)">
+        <div class="footerContainer" layout="column" layout-align="center start">
+          <md-button class="tweetFooterButton md-primary" ng-click="goToProfile($tweet.tweet.inReplyTo.author.username)">
+            <text class="tweetFooterText">{{ $tweet.tweet.inReplyTo.author.username }}</text>
+          </md-button>
+          <div layout-align="none" class="tweetFooterTweetButton md-primary">
+            <text class="tweetFooterText" compile="$tweet.tweet.inReplyTo.content" ></text>
+          </div>
+        </div>
+      </md-button>
+      <md-button class="footer" ng-show='$tweet.tweet.repostOf' ng-click="$tweet.showContext($event, $tweet.tweet.repostOf)">
+        <div class="footerContainer" layout="column" layout-align="center start">
+          <md-button class="tweetFooterButton md-primary">
+            <text class="tweetFooterText">{{ $tweet.tweet.repostOf.author.username }}</text>
+          </md-button>
+          <div layout-align="none" class="tweetFooterTweetButton md-primary">
+            <text class="tweetFooterText" compile="$tweet.tweet.repostOf.content"></text>
+          </div>
+        </div>
+      </md-button>
+    </div>
+    <div class="tweetButtonContainer">
+      <md-button ng-click="$tweet.$tweetService.deleteTweet($tweet.tweet)" ng-show="$tweet.tweet.author.username == $tweet.$authenticateService.username" class="delete md-icon-button">
+        <i class="tweetIcons material-icons" layout="fill">delete</i>
+      </md-button>
+      <md-button ng-click="$tweet.$tweetService.showTweetPrompt($event, $tweet.tweet.id)" class="reply md-icon-button">
+        <i class="tweetIcons material-icons" layout="fill">reply</i>
+      </md-button>
+      <md-button ng-click="$tweet.$tweetService.repostTweet($tweet.tweet.id)" class="repost md-icon-button">
+        <i class="tweetIcons material-icons" layout="fill">link</i>
+      </md-button>
+      <md-button ng-click="$tweet.$tweetService.likeTweet($tweet.tweet)" ng-hide="$tweet.tweet.liked" class="like md-icon-button">
+        <i class="tweetIcons material-icons" layout="fill">favorite_border</i>
+      </md-button>
+      <md-button ng-click="$tweet.$tweetService.unlikeTweet($tweet.tweet)" ng-show="$tweet.tweet.liked" class="liked md-icon-button">
+        <i class="tweetIcons material-icons" layout="fill">favorite</i>
+      </md-button>
+    </div>
+  </div>
+</md-list-item>

@@ -1,0 +1,23 @@
+<div>
+  <tweet tweet="$context.getTweet()"></tweet>
+</div>
+<md-tabs layout-fill class="loginTab" md-stretch-tabs="always">
+  <md-tab id="tab1">
+    <md-tab-label>Before</md-tab-label>
+    <md-tab-body>
+      <md-list flex="">
+        <md-list-item ng-hide="$context.getBefore() && $context.getBefore().length > 0">No results found</md-list-item>
+        <tweet tweet="tweet" ng-repeat="tweet in $context.getBefore()"></tweet>
+      </md-list>
+    </md-tab-body>
+  </md-tab>
+  <md-tab id="tab2">
+    <md-tab-label>After</md-tab-label>
+    <md-tab-body>
+      <md-list flex="">
+        <md-list-item ng-hide="$context.getAfter() && $context.getAfter().length > 0">No results found</md-list-item>
+        <tweet tweet="tweet" ng-repeat="tweet in $context.getAfter()"></tweet>
+      </md-list>
+    </md-tab-body>
+  </md-tab>
+</md-tabs>

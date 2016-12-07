@@ -1,0 +1,21 @@
+<div class="pageWidth pageHeight" layout-padding layout="row">
+
+  <follow layout-fill layout="column" flex="30"></follow>
+
+  <md-content layout-fill flex="70" class="transparentBackground">
+    <md-tabs layout-fill class="loginTab" md-stretch-tabs="always">
+      <md-tab id="tab1">
+        <md-tab-label>{{$page.$stateService.currentTab}}</md-tab-label>
+        <md-tab-body>
+          <ui-view></ui-view>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab2">
+        <md-tab-label>Mentions</md-tab-label>
+        <md-tab-body>
+          <mentions></mentions>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

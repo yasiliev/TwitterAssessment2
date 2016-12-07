@@ -1,0 +1,4 @@
+<md-list flex="">
+  <md-list-item ng-hide="$home.getFeed()  && $home.getFeed().length > 0">No results found</md-list-item>
+  <tweet tweet="tweet" ng-repeat="tweet in $home.getFeed()"></tweet>
+</md-list>
